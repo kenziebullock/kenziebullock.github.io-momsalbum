@@ -50,13 +50,17 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
-  display: flex;
-}
-
-.main-body {
+  font-family: 'Permanent Marker', cursive;
+  /* font-family: 'PT Sans', sans-serif; */
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+#main-body {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   
   justify-content: center;
@@ -65,17 +69,35 @@ html, body {
 }
 
 .main-header {
-  font-size: 2em;
-  height: 2em;
+  font-size: 3em;
+  /* height: 3em; */
+  margin: auto;
+  margin: 1em;
+  font-weight: lighter;
+}
+
+section {
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
 }
 
 .pic-box {
   /* width: 33vw; */
   min-width: 450px;
   max-width: 33vw;
-  border: 1px grey solid;
-  height: 50vh;
+  /* border: 1px grey solid; */
+  min-height: 330px;
+  max-height: 55vh;
+  /* height: 50vh; */
+
   /* background-color: lightblue; */
+}
+
+.pic-box img {
+  max-width: 90%;
 }
 
 .red {
