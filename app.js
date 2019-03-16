@@ -18,6 +18,7 @@ $( document ).ready(() => {
   const twelvth = document.getElementById('turks');
 
   const modalImg = document.getElementById("img01");
+  let interval = '';
   
   function slideshow(arr, folder) {
     let counter = 0;
@@ -26,69 +27,71 @@ $( document ).ready(() => {
     function next() {
       if (counter === arr.length -1) counter = 0;
       counter++;
-      src = `assets/pics/${folder}/${arr[counter]}`
+      src = `assets/pics/${folder}/${arr[counter]}`;
       modalImg.src = src;
     }
 
-    next()
-    setInterval(next, 3000)
+    next();
+    interval = setInterval(next, 3000);
 
     modal.style.display = "block";
   }
 
   first.onclick = () => {
-    slideshow(xmas, 'Xmas')
+    slideshow(xmas, 'Xmas');
   }
 
   second.onclick = () => {
-    slideshow(belize, 'Belize10')
+    slideshow(belize, 'Belize10');
   }
 
   third.onclick = () => {
-    slideshow(cruise, 'Cruise10')
+    slideshow(cruise, 'Cruise10');
   }
 
   fourth.onclick = () => {
-    slideshow(joyce, 'Joyces09')
+    slideshow(joyce, 'Joyces09');
   }
 
   fifth.onclick = () => {
-    slideshow(mexico, 'Mexico08')
+    slideshow(mexico, 'Mexico08');
   }
 
   sixth.onclick = () => {
-    slideshow(nyc, 'NYC11')
+    slideshow(nyc, 'NYC11');
   }
 
   seventh.onclick = () => {
-    slideshow(hawaii, 'OnionHouse')
+    slideshow(hawaii, 'OnionHouse');
   }
 
   eigth.onclick = () => {
-    slideshow(random, 'Random')
+    slideshow(random, 'Random');
   }
 
   ninth.onclick = () => {
-    slideshow(sandiego, 'SanDiego10')
+    slideshow(sandiego, 'SanDiego10');
   }
 
   tenth.onclick = () => {
-    slideshow(sarah, "Sarah's Bday 09")
+    slideshow(sarah, "Sarah's Bday 09");
   }
 
   eleventh.onclick = () => {
-    slideshow(sauble, 'Sauble08')
+    slideshow(sauble, 'Sauble08');
   }
 
   twelvth.onclick = () => {
-    slideshow(turks, 'Turks12')
+    slideshow(turks, 'Turks12');
   }
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function() { 
+  span.onclick = function() {
+    clearInterval(interval);
+    src = '';
     modal.style.display = "none";
   }
 
